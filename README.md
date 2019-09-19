@@ -11,4 +11,4 @@ The business layer's Load Balancer should be up and running. Also it should allo
   S3_BUCKET
 
 ## Lambda URL
-  https://eu-west-2.console.aws.amazon.com/lambda/home?region=eu-west-2#/functions/takeon-validationdb-export-lambda-dev-main?tab=graph
+  https://eu-west-2.console.aws.amazon.com/lambda/home?region=eu-west-2#/functions/takeon-db-export-lambda-dev-main?tab=graph
