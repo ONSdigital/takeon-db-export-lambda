@@ -7,7 +7,7 @@ This repository is used to do the following -
 The business layer's Load Balancer should be up and running. Also it should allow access to NAT's public IP so that this Lambda can access the endpoint.
 
 ## Environment variables in Lamda
-  GRAPHQL_ENDPOINT
+  GRAPHQL_ENDPOINT  
   S3_BUCKET
 
 ## Lambda URL
