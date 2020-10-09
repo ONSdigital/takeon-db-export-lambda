@@ -43,29 +43,29 @@ data "aws_lb" "business-layer-lb" {
 data "aws_caller_identity" "current" {}
 
 # input
-resource "aws_sqs_queue" "db-input" {
-  name = "${local.name_prefix}-db-input"
+resource "aws_sqs_queue" "db-export-input" {
+  name = "${local.name_prefix}-db-export-input"
   redrive_policy = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.dlq.arn}\",\"maxReceiveCount\":3}"
 
   tags = merge(
     var.common_tags,
     {
-    Name = "${local.name_prefix}-db-input",
-    "ons:name" = "${local.name_prefix}-db-input"
+    Name = "${local.name_prefix}-db-export-input",
+    "ons:name" = "${local.name_prefix}-db-export-input"
     }
   )
 }
 
 # output
-resource "aws_sqs_queue" "db-output" {
-  name = "${local.name_prefix}-db-input"
+resource "aws_sqs_queue" "db-export-output" {
+  name = "${local.name_prefix}-db-export-output"
   redrive_policy = "{\"deadLetterTargetArn\":\"${aws_sqs_queue.dlq.arn}\",\"maxReceiveCount\":3}"
 
   tags = merge(
     var.common_tags,
     {
-    Name = "${local.name_prefix}-db-input",
-    "ons:name" = "${local.name_prefix}-db-input"
+    Name = "${local.name_prefix}-db-export-output",
+    "ons:name" = "${local.name_prefix}-db-export-output"
     }
   )
 }
